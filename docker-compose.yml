@@ -1,0 +1,44 @@
+services:
+  postgis:
+    image: postgis/postgis:16-3.4
+    platform: linux/amd64
+    container_name: mariupol_postgis
+    restart: unless-stopped
+    ports:
+      - "5433:5432" # Host:Container port mapping
+    environment:
+      POSTGRES_DB: mariupol_toponyms
+      POSTGRES_USER: mariupol_researcher
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD} # Password passed via ENV var
+      POSTGRES_HOST_AUTH_METHOD: md5 # Explicitly sets host auth method to MD5
+      
+    volumes:
+      # Mount SQL initialization scripts directly into docker-entrypoint-initdb.d for proper execution order
+      - ./sql/10_setup/01_extensions.sql:/docker-entrypoint-initdb.d/10_01_extensions.sql
+      - ./sql/10_setup/02_schemas.sql:/docker-entrypoint-initdb.d/10_02_schemas.sql
+      - ./sql/10_setup/03_tables.sql:/docker-entrypoint-initdb.d/10_03_tables.sql
+      - ./sql/20_functions/01_name_normalization.sql:/docker-entrypoint-initdb.d/20_01_name_normalization.sql
+      - ./sql/30_constraints/01_names_exclusion.sql:/docker-entrypoint-initdb.d/30_01_names_exclusion.sql
+      # --- ORIGINAL VOLUME MOUNTS (KEEP THESE) ---
+      - postgis_data:/var/lib/postgresql/data # Volume for persistent data
+      - ./data/backups:/backups # For backups
+      # --- END ORIGINAL ---
+
+    # healthcheck: (Commented out due to persistent validation issues, relying on tenacity)
+    #   test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB -h localhost || exit 1"]
+    #   interval: 5s       
+    #   timeout: 5s        
+    #   retries: 10        
+    #   start_period: 60s  
+      
+    command: postgres -c 'fsync=off' # Runs postgres in foreground, ensures container stays alive
+
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '2.0'
+
+volumes:
+  postgis_data:
+    driver: local

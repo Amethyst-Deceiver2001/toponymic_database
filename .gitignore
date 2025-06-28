@@ -1,0 +1,9 @@
+.env
+venv/
+mariupol_env/ # If you have this named venv
+mariupol_env_new/ # If you have this named venv
+data/
+logs/
+__pycache__/
+*.pyc
+.DS_Store

@@ -1,0 +1,36 @@
+2025-06-27 16:48:00,128 - INFO - 📊 Loading OSM data from data/analysis/osm/mariupol-pre-invasion.osm.pbf
+2025-06-27 16:48:00,128 - INFO -    File size: 7.4 MB
+2025-06-27 16:48:00,139 - ERROR - ❌ Error loading OSM file: invalid connection option "database"
+
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': invalid connection option "database"
+
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': invalid connection option "database"
+
+2025-06-27 16:54:55,628 - INFO - 📊 Loading OSM data from data/analysis/osm/mariupol-pre-invasion.osm.pbf
+2025-06-27 16:54:55,628 - INFO -    File size: 7.4 MB
+2025-06-27 16:54:55,632 - ERROR - ❌ Error loading OSM file: invalid connection option "database"
+
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': invalid connection option "database"
+
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': invalid connection option "database"
+
+2025-06-27 17:00:20,438 - INFO - 📊 Loading OSM data from data/analysis/osm/mariupol-pre-invasion.osm.pbf
+2025-06-27 17:00:20,438 - INFO -    File size: 7.4 MB
+2025-06-27 17:00:20,452 - ERROR - ❌ Error loading OSM file: invalid connection option "database"
+
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': invalid connection option "database"
+
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': invalid connection option "database"
+
+2025-06-27 17:02:59,099 - INFO - 📊 Loading OSM data from data/analysis/osm/mariupol-pre-invasion.osm.pbf
+2025-06-27 17:02:59,099 - INFO -    File size: 7.4 MB
+2025-06-27 17:02:59,120 - ERROR - ❌ Error loading OSM file: invalid connection option "database"
+
+Multiple connection attempts failed. All failures were:
+- host: 'localhost', port: 5432, hostaddr: '::1': invalid connection option "database"
+
+- host: 'localhost', port: 5432, hostaddr: '127.0.0.1': invalid connection option "database"
+
