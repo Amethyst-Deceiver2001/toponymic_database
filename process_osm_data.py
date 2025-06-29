@@ -257,7 +257,7 @@ def main(pbf_file: str, query_date: str):
             maxconn=5,
             dbname="mariupol_toponyms",
             user="mariupol_researcher",
-            password="your_password", # IMPORTANT: Replace with your password or load from .env
+            password="REDACTED", # IMPORTANT: Replace with your password or load from .env
             host="localhost",
             port="5433"
         )

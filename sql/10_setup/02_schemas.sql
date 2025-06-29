@@ -7,7 +7,7 @@ DO
 $do$
 BEGIN
    IF NOT EXISTS (SELECT FROM pg_catalog.pg_roles WHERE rolname = 'mariupol_researcher') THEN
-      CREATE USER mariupol_researcher WITH PASSWORD 'YOUR_ACTUAL_PASSWORD_FOR_RESEARCHER' LOGIN CREATEDB;
+      CREATE USER mariupol_researcher WITH PASSWORD 'REDACTED' LOGIN CREATEDB;
    END IF;
 END
 $do$;

@@ -1,9 +1,45 @@
-.env
-venv/
-mariupol_env/ # If you have this named venv
-mariupol_env_new/ # If you have this named venv
-data/
-logs/
+# Data
+data/osm/raw/*
+!data/osm/raw/.gitkeep
+data/exports/*
+
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+.env
+.venv
+
+# System
 .DS_Store
+Thumbs.db
+.env
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Data files
+data/
+*.csv
+*.geojson
+*.pbf
+*.osm
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
