@@ -1,0 +1,2 @@
+total_addresses,unique_streets,unique_postcodes,building_types,amenity_types,min_housenumber_length,max_housenumber_length,avg_building_area_sqm,bounding_box
+23947,649,23,23,1,1,9,182.96309255736574,"{""type"":""Polygon"",""crs"":{""type"":""name"",""properties"":{""name"":""EPSG:3857""}},""coordinates"":[[[4171412.327324297,5953818.869871871],[4171412.327324297,5973101.123148076],[4188791.982636854,5973101.123148076],[4188791.982636854,5953818.869871871],[4171412.327324297,5953818.869871871]]]}"
